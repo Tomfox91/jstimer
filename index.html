@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Tf">
+	<link rel="shortcut icon" href="img/timer.ico">
+	<title>42</title>
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="modal fade" id="config" tabindex="-1" role="dialog" aria-labelledby="ConfigModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="ConfigModal">Configurazione</h4>
+				</div>
+				<div class="modal-body">
+					<form role="form" class="form-horizontal">
+						<div class="form-group">
+							<label for="itimer" class="col-sm-4 control-label">Lunghezza timer</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="itimer">
+							</div>
+						</div>
+					</form>
+					<form role="form" class="form-horizontal">
+						<div class="form-group">
+							<label for="ilpu" class="col-sm-4 control-label">Logo a sinistra</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="ilpu">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="irpu" class="col-sm-4 control-label">Logo a destra</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="irpu">
+							</div>
+						</div>
+						<div class="form-group text-center">
+							<button type="button" class="btn btn-info" id="binv">Inverti immagini</button>
+						</div>
+					</form>
+
+					<h4>Scorciatoie da tastiera</h4>
+					<ul>
+						<li><kbd>spazio</kbd>: start/stop</li>
+						<li><kbd>c</kbd> / <kbd>d</kbd>: punteggio di sinistra</li>
+						<li><kbd>m</kbd> / <kbd>k</kbd>: punteggio di destra</li>
+					<ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container-fluid">
+		<p id="timer" class="resrel text-center">00:00</p>
+		<div id="punteggio">
+			<div class="ti resrel" id="til"></div>
+			<div class="ti resrel" id="tir"></div>
+			<p class="resrel text-center">
+				<span id="puntl">00</span>&ndash;<span id="puntr">00</span>
+			</p>
+		</div>
+		<div id="buttons" class="row">
+			<div class="col-xs-1 text-right">
+				<button type="button" class="btn btn-lg btn-danger" id="breset">
+					<span class="glyphicon glyphicon-repeat"></span>
+				</button>
+			</div>
+			<div class="col-xs-3 text-right">
+				<button type="button" class="btn btn-lg btn-warning" id="blm">
+					<span class="glyphicon glyphicon-minus"></span>
+				</button>
+				<button type="button" class="btn btn-lg btn-success wide" id="blp">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+			</div>
+			<div class="col-xs-4 text-center">
+				<button type="button" class="btn btn-lg btn-primary wwide" id="bstartstop">
+					<span class="glyphicon glyphicon-play"></span>
+				</button>
+			</div>
+			<div class="col-xs-3 text-left">
+				<button type="button" class="btn btn-lg btn-success wide" id="brp">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+				<button type="button" class="btn btn-lg btn-warning" id="brm">
+					<span class="glyphicon glyphicon-minus"></span>
+				</button>
+			</div>
+			<div class="col-xs-1 text-left">
+				<button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#config">
+					<span class="glyphicon glyphicon-cog"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/mousetrap.min.js"></script>
+	<script src="js.js"></script>
+</body>
+</html>

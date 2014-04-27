@@ -1,0 +1,150 @@
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url(lib/font/SourceSansPro-Regular.ttf.woff) format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url(lib/font/SourceSansPro-Semibold.ttf.woff) format('truetype');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url(lib/font/SourceSansPro-Bold.ttf.woff) format('truetype');
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+
+p#timer {
+	font-size: 65vh;
+	font-weight: 700;
+	margin-top: -25vh;
+}
+
+div#punteggio {
+	margin-top: -20vh;
+	overflow: hidden;
+}
+
+div#punteggio p {
+	font-size: 35vh;
+	text-align: center;
+	margin-top: -10vh;
+	font-weight: 600;
+}
+
+div.ti {
+	height: 35vh;
+	width: 35vh;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 65%;
+	margin-top: 5vh;
+}
+
+div#til {
+	float: left;
+	/* background-image from JS */
+}
+
+div#tir {
+	float: right;
+	/* background-image from JS */
+}
+
+div#buttons button {
+	margin-top: -9vh;
+}
+
+div#buttons button.wide {
+	width: 10rem;
+}
+
+div#buttons button.wwide {
+	width: 15rem;
+}
+
+form:not(:first-child) {
+	padding-top: 1rem;
+}
+
+div.modal-footer {
+	margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@media screen and (min-width: 1200px) {
+	p#timer {
+		font-size: 72pt;
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	p#timer {
+		font-size: 288pt;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	p#timer {
+		font-size: 72pt;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	p#timer {
+		font-size: 72pt;
+	}
+}*/
