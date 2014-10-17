@@ -27,6 +27,18 @@ p#timer {
 	margin-top: -25vh;
 }
 
+div#timeElapsedContainer {
+	position: absolute;
+	left: 50%;
+	top: 4vh;
+	font-size: 4vh;
+}
+
+p#timeElapsed {
+	position: relative;
+	left: -50%;
+}
+
 div#punteggio {
 	margin-top: -20vh;
 	overflow: hidden;
@@ -77,74 +89,3 @@ form:not(:first-child) {
 div.modal-footer {
 	margin-top: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*@media screen and (min-width: 1200px) {
-	p#timer {
-		font-size: 72pt;
-	}
-}
-
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-	p#timer {
-		font-size: 288pt;
-	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
-	p#timer {
-		font-size: 72pt;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	p#timer {
-		font-size: 72pt;
-	}
-}*/

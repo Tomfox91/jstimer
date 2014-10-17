@@ -2,8 +2,8 @@ function pad2(num) {
 	return (num<10 ? '0' : '') + num;
 }
 
-function msec2txt(msec) {
-	var secs = Math.ceil(msec / 1000);
+function msec2txt(msec, floor) {
+	var secs = (floor ? Math.ceil : Math.floor)(msec / 1000);
 
 	var min = pad2(Math.floor(secs / 60));
 	var sec = pad2(Math.floor(secs % 60));
@@ -49,6 +49,10 @@ function selectLogo(side, url) {
 		}
 	});
 
+	$('#showElapsed').on('click', function() {
+		$.event.trigger('setShowElapsed', this.checked);
+	});		
+
 	$('#binv').on('click', function() {
 		$.event.trigger('invertLogos');
 	});
@@ -80,6 +84,12 @@ function selectLogo(side, url) {
 	$(document).on('setTimerDuration', function(e, msec) {
 		localStorage.jst_dur = msec;
 		$('#itimer').val(msec2txt(msec));
+	});
+	
+	$(document).on('setShowElapsed', function(e, show) {
+		localStorage.jst_showElapsed = show;
+		$('#timeElapsed').toggleClass('hide', !show);
+		$('#showElapsed').prop('checked', show);
 	});
 }());
 
@@ -125,7 +135,7 @@ function initCounters() {
 }
 
 
-function Timer(elem, timerDuration) {
+function Timer(timer, elapsed, timerDuration) {
 	var running = false;
 	var remaining = timerDuration;
 	var end = null;
@@ -144,7 +154,8 @@ function Timer(elem, timerDuration) {
 	var onEnd = function () {}; 
 
 	function write(msec) {
-		elem.text(msec2txt(msec));
+		timer.text(msec2txt(msec));
+		elapsed.text(msec2txt(timerDuration - msec, true));
 	}
 
 	function tick() {
@@ -204,7 +215,7 @@ function Timer(elem, timerDuration) {
 }
 
 function initTimer(initialDuration) {
-	var tim = new Timer($('#timer'), initialDuration);
+	var tim = new Timer($('#timer'), $('#timeElapsed'), initialDuration);
 
 	function play() {
 		$('#bstartstop>span').removeClass('glyphicon-pause');
@@ -254,38 +265,11 @@ function initTimer(initialDuration) {
 	});
 
 	var timerDuration = parseInt(localStorage.jst_dur || 1200000);
-	$.event.trigger('setTimerDuration', timerDuration)
+	$.event.trigger('setTimerDuration', timerDuration);
+
+	var showElapsed = (localStorage.jst_showElapsed === 'true') || false;
+	$.event.trigger('setShowElapsed', showElapsed);
 
 	initCounters();
 	initTimer(timerDuration);
 }());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
